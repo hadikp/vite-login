@@ -13,7 +13,8 @@
     "redaxios": "^0.5.1",
     "v5": "^0.1.2",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.4",
+    "vue3-popper": "^1.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",

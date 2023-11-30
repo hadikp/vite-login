@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import "./assets/main.css"
 
+
 </script>
 
 <template>
@@ -26,6 +27,7 @@ import "./assets/main.css"
     </div>
   </footer>
 </template>
+
 
 <style scoped>
 
