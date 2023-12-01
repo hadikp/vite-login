@@ -1,148 +1,66 @@
 <script>
-import { defineComponent } from 'vue';
-import Popper from "vue3-popper";
-export default defineComponent({
-  components: {
-    Popper,
-  },
-})
+
 </script>
 
 <template>
   <h1>Home Component</h1>
-  <Popper content="This is the Popper content">
-    <button>Trigger element</button>
-  </Popper>
-  <Popper>
-  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Login modal</button>
-  </Popper>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    ×</button>
-                <h4 class="modal-title" id="myModalLabel">
-                    Login/Registration - <a href="http://www.jquery2dotnet.com">jquery2dotnet.com</a></h4>
-            </div>
-            <div class="modal-body">
+  
+  <section clas="main-container">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                            <li><a href="#Registration" data-toggle="tab">Registration</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="Login">
-                                <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email1" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
-                                        Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            Submit</button>
-                                        <a href="javascript:;">Forgot your password?</a>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane" id="Registration">
-                                <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Name</label>
-                                    <div class="col-sm-10">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <select class="form-control">
-                                                    <option>Mr.</option>
-                                                    <option>Ms.</option>
-                                                    <option>Mrs.</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Name" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="mobile" class="col-sm-2 control-label">
-                                        Mobile</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-sm-2 control-label">
-                                        Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="password" placeholder="Password" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <button type="button" class="btn btn-primary btn-sm">
-                                            Save & Continue</button>
-                                        <button type="button" class="btn btn-default btn-sm">
-                                            Cancel</button>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
+                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="header-content text-center">
+                            <h1 class="header-title">Bootstrap Form</h1>
+                            <h4 class="header-motto">Bootstrap Register and Login  Form</h4>
                         </div>
-                        <div id="OR" class="hidden-xs">
-                            OR</div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="row text-center sign-with">
-                            <div class="col-md-12">
-                                <h3>
-                                    Sign in with</h3>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="btn-group btn-group-justified">
-                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
-                                        Google</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-block">
+                          <h2>Register</h2>
+                          <div class="form">
+                            <form action="/action_page.php">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter Name" name="name" required>
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Enter Role" name="role" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Enter Repeat Password" name="repeat-password" required>
+                                </div>
+                                <button type="submit" class="btn btn-default custom-btn">Submit</button>
+                            </form>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-block">
+                           <h2>Login</h2>
+                           <div class="form">
+                            <form action="/action_page.php">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                </div>
+                                <button type="submit" class="btn btn-default custom-btn">Submit</button>
+                            </form>
+                           </div> 
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        </section>
 
-
-  
 </template>
 
 <style>
@@ -163,47 +81,65 @@ h1 {
   } 
 }
 
-body{
-    margin: 0;
-    font-size: .9rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #212529;
-    text-align: left;
-    background-color: #f5f8fa;
+.header-content {
+  padding: 50px 0;
+}
+.header-title {
+  color: #88c724;
+  display: block;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+.header-motto {
+  color: #88c724;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.form-block {
+  background: #f9f9f9 none repeat scroll 0 0;
+  border-radius: 1px;
+  box-shadow: 2px 3px 8px #a7a7a7;
+  color: gray;
+  display: block;
+  min-height:460px;
+  overflow: hidden;
+  padding:30px;
+  margin-bottom:20px;
+}
+.form-block h2 {
+  border-bottom: 1px solid #88c724;
+  color: #88c724;
+  display: block;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 28px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+}
+.form .form-control {
+  border-radius: 0;
+  color: #999;
+  height: 42px;
+  margin: 10px;
+}
+.form-control:focus {
+  border-color: #88c724;
+  box-shadow: none;
+}
+.custom-btn:hover,
+.custom-btn {
+  background-color: #88c724;
+  border-color: #88c724;
+  color: #fff;
+  font-size: 20px;
+  height: 40px;
+  width: 100%;
+  font-weight: 500;
 }
 
-.navbar-laravel
-{
-    box-shadow: 0 2px 4px rgba(0,0,0,.04);
-}
 
-.navbar-brand , .nav-link, .my-form, .login-form
-{
-    font-family: Raleway, sans-serif;
-}
 
-.my-form
-{
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-.my-form .row
-{
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.login-form
-{
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-.login-form .row
-{
-    margin-left: 0;
-    margin-right: 0;
-}
 </style>
