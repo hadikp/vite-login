@@ -1,5 +1,26 @@
 <script>
+import { reactive } from "vue"
 
+export default {
+  name: "Login",
+  setup() {
+    const data = reactive({
+      username: '',
+      email: '',
+      role: '',
+      password: '',
+      repeat_password: ''
+    });
+    const register = () => {
+      console.log(data);
+    }
+    return {
+      data,
+      register
+    }
+  }
+}
+  
 </script>
 
 <template>
@@ -20,23 +41,23 @@
                         <div class="form-block">
                           <h2>Register</h2>
                           <div class="form">
-                            <form action="/action_page.php">
+                            <form v-on:submit.prevent="register">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter Name" name="name" required>
+                                    <input type="text" class="form-control" placeholder="Enter UserName" name="username" required v-model="data.username">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter email" name="email" required>
+                                    <input type="text" class="form-control" placeholder="Enter email" name="email" required v-model="data.email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Enter Role" name="role" required>
+                                    <input type="text" class="form-control" placeholder="Enter Role" name="role" required v-model="data.role">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                                    <input type="password" class="form-control" placeholder="Enter Password" name="password" required v-model="data.password">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Enter Repeat Password" name="repeat-password" required>
+                                    <input type="password" class="form-control" placeholder="Enter Repeat Password" name="repeat_password" required v-model="data.repeat_password">
                                 </div>
-                                <button type="submit" class="btn btn-default custom-btn">Submit</button>
+                                <button type="submit" class="btn btn-default custom-btn">Register</button>
                             </form>
                           </div>
                         </div>
