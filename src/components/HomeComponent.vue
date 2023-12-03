@@ -1,5 +1,6 @@
 <script>
 import { reactive } from "vue"
+import axios from "redaxios"
 
 export default {
   name: "Login",
@@ -7,12 +8,15 @@ export default {
     const data = reactive({
       username: '',
       email: '',
-      role: '',
       password: '',
-      repeat_password: ''
+      passwordConfirm: '',
+      role: '',
     });
-    const register = () => {
-      console.log(data);
+    const register =  () => {
+       axios.post("http://localhost:8080/api/register", data).then(resp => 
+          console.log(resp.data))
+          .catch(error => (error.value = 'Hibás regisztráció, próbáld újra!'))
+          console.log(data)
     }
     return {
       data,
@@ -55,7 +59,7 @@ export default {
                                     <input type="password" class="form-control" placeholder="Enter Password" name="password" required v-model="data.password">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Enter Repeat Password" name="repeat_password" required v-model="data.repeat_password">
+                                    <input type="password" class="form-control" placeholder="Enter Repeat Password" name="repeat_password" required v-model="data.passwordConfirm">
                                 </div>
                                 <button type="submit" class="btn btn-default custom-btn">Register</button>
                             </form>
