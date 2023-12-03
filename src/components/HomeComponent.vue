@@ -16,11 +16,16 @@ export default {
        axios.post("http://localhost:8080/api/register", data).then(resp => 
           console.log(resp.data))
           .catch(error => (error.value = 'Hibás regisztráció, próbáld újra!'))
-          console.log(data)
+    }
+    const login = () => {
+      axios.post("http://localhost:8080/api/login", data).then(resp => 
+          console.log(resp.data))
+          .catch(error => (error.value = 'Hibás bejelentkezés, próbáld újra!'))
     }
     return {
       data,
-      register
+      register,
+      login
     }
   }
 }
@@ -70,14 +75,14 @@ export default {
                         <div class="form-block">
                            <h2>Login</h2>
                            <div class="form">
-                            <form action="/action_page.php">
+                            <form v-on:submit.prevent="login">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                    <input type="text" class="form-control" placeholder="Enter username" name="username" v-model="data.username">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                    <input type="password" class="form-control" placeholder="Enter password" name="pwd" v-model="data.password">
                                 </div>
-                                <button type="submit" class="btn btn-default custom-btn">Submit</button>
+                                <button type="submit" class="btn btn-default custom-btn">Login</button>
                             </form>
                            </div> 
                         </div>
