@@ -11,8 +11,8 @@ import "./assets/main.css"
       <nav class="navigation">
         <ul class="nav-ul">
           <li><RouterLink class="nav-ul-li" to="/">Home</RouterLink></li>
-          <li><RouterLink class="nav-ul-li" to="/about">About</RouterLink></li>
-          <li><RouterLink class="nav-ul-li" to="/user">User</RouterLink></li>
+          <li><RouterLink class="nav-ul-li" to="/login">Login</RouterLink></li>
+          <li><RouterLink class="nav-ul-li" to="/register">Register</RouterLink></li>
         </ul>
       </nav>
     </div>
