@@ -1,17 +1,18 @@
 <script>
-import { reactive } from "vue"
+import { onMounted, ref } from "vue"
 import axios from "redaxios"
 
 export default {
   name: "Home",
   setup() {
-    const data = reactive({
-      username: '',
-      
-    });
+    const message = ref('You are not logged in');
     
+    onMounted(async () => {
+      const {data} = await axios.get("http://localhost:8080/api");
+      message.value = `Hi ${data.username}`
+    })
     return {
-      data
+      message
     }
   }
 }
@@ -20,6 +21,7 @@ export default {
 
 <template>
   <h1>Home Component</h1>
+  <h3>{{ message }}</h3>
   
 </template>
 
@@ -33,6 +35,9 @@ h1 {
   color: white;
 }
 
+h3 {
+  color: blue;
+}
 @media (min-width: 1024px) {
   header {
     display: flex;

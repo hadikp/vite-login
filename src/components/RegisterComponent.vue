@@ -1,6 +1,7 @@
 <script>
   import { reactive } from "vue"
   import axios from "redaxios"
+  import { useRouter } from "vue-router";
 
   export default {
   name: "Register",
@@ -12,10 +13,12 @@
       passwordConfirm: '',
       role: '',
     });
+    const router = useRouter();
     const register = async () => {
-       await axios.post("http://localhost:8080/api/register", data).then(resp => 
+        await axios.post("http://localhost:8080/api/register", data).then(resp => 
           console.log(resp.data))
           .catch(error => (error.value = 'Hibás regisztráció, próbáld újra!'))
+        await router.push({path: '/login'})
     }
     return {
       data,
