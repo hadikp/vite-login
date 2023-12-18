@@ -1,6 +1,8 @@
 <script>
   import { reactive } from "vue"
   import axios from "redaxios"
+  import { useLoginStore } from '../stores/login'
+
 
   export default {
   name: "Login",
@@ -9,14 +11,18 @@
       username: '',
       password: '',
     });
-    const login = async () => {
-      await axios.post("http://localhost:8080/api/login", data).then(resp => 
-          console.log(resp.data))
-          .catch(error => (error.value = 'Hibás bejelentkezés, próbáld újra!'))
+    const loginData = useLoginStore;
+    const login =  () => {
+       axios.post("http://localhost:8080/api/login", data).then(resp => {
+        console.log(resp.data),
+          loginData.login = resp.data
+        })
+          .catch(error => (error.value = 'Hibás bejelentkezés, próbáld újra!'))   
     }
     return {
       data,
-      login
+      loginData,
+      login,
     }
   }}
 </script>
