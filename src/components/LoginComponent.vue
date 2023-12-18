@@ -11,7 +11,7 @@
       username: '',
       password: '',
     });
-    const loginData = useLoginStore;
+    const loginData = useLoginStore();
     const login =  () => {
        axios.post("http://localhost:8080/api/login", data).then(resp => {
         console.log(resp.data),
