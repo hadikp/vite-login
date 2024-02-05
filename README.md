@@ -1,29 +1,35 @@
-# vite-login
+## General Information
+- This is currently a backend application for displaying my paintings, where users (admins and visitors) have different permissions.
+- Admins have access to advanced features such as adding new users to the database and creating events (e.g. new virtual exhibitions).
+- This project is designed to practice Java/Spring Boot/Spring security and to extend it with other technologies.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Technologies Used
+- Java - version 17
+- Spring Boot - version 3.2.1
+- MariaDB java client - version 3.3.2.
+- Spring Boot starter test - version 3.2.1.
+- Spring security - version 6.1.2.
+- Flyway-mysql - version 10.7.1.
+- Spring data JPA persistent layer - version 3.2.1.
+- Spring Boot Maven plugin - version 3.2.2
 
-## Recommended IDE Setup
+## Features
+- Authorization and authentication with OAuth 2.0
+- Database migration with flyway
+- Tested with integration (mainly WebClient) tests, coverage more than 80%
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Usage
+The application runs on localhost, could be tried out with Postman or **by running tests**.
+Due to authentication, access is needed.
 
-## Customize configuration
+## Project Status
+Project is: _in progress_
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Room for Improvement
 
-## Project Setup
+Room for improvement:
+- Improve test coverage
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+To do:
+- Writing tests
+- Frontend (Vue-vite)
